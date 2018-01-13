@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a:link {color:#FF0000;}    /* 未被访问的链接 */
+        a:visited {color:#00FF00;} /* 已被访问的链接 */
+        a:hover {color:#FF00FF;}   /* 鼠标指针移动到链接上 */
+        a:active {color:#0000FF;}  /* 正在被点击的链接 */
+        .test strong {
+            font-size: 16px;
+        }
+        .test .url p {
+            padding-top: 200px;
+            background-image: url(apple.jpg) ;
+            background-repeat: no-repeat;
+            background-size: 100px 140px;
+        }
+        .test .gradient p {
+            height: 100px;
+            background-image: linear-gradient(to top, #45B5DA, #0382AD);
+            background-size: 100px 140px;
+        }
+        .test .multiple p {
+            padding-top: 200px;
+            background-image: url(apple.jpg),
+            url(apple.jpg),
+            url(apple.jpg);
+            background-repeat: no-repeat;
+            background-position: 0 0,
+            100px 0,
+            200px 0;
+            background-size: 100px 140px;
+        }
+    </style>
+</head>
+<body>
+<a href="test1.html">点击一下</a>
+<ul class="test">
+    <li class="url">
+        <strong>使用url()引入背景图像</strong>
+        <p>使用url()可以是绝对或相对路径</p>
+    </li>
+    <li class="gradient">
+        <strong>使用渐变绘制背景图像</strong>
+        <p>渐变种类有: linear-gradient, radial-gradient, repeating-linear-gradient, repeating-radial-gradient</p>
+    </li>
+    <li class="multiple">
+        <strong>多重背景图</strong>
+        <p>多重背景图可以是url()或gradient的混合方式</p>
+    </li>
+</ul>
+</body>
+</html>

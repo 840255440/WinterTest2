@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div[class^="a"] {
+            border: 2px solid #000;
+        }
+        div[class~="a"] {
+            border: 2px solid #000;
+        }
+        p{
+            color: coral;
+            font-size: 20px;
+        }
+        .test1{
+            color: blue;
+            font-size: large;
+
+        }
+        #test2{
+            color: brown;
+        }
+        div p{
+            color: green;
+        }
+        .test3 p{
+            color: darkkhaki;
+        }
+        input[type="text"]{
+            height: 55px;
+        }
+    ul li{
+        color: #30ff36;
+        font-size: larger;
+        list-style: none;
+        background: url("apple.jpg") no-repeat;
+    }
+    </style>
+</head>
+<body>
+<div class="abc">1</div>
+<div class="acb">2</div>
+<div class="bac">3</div>
+<ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+</ul>
+<p>标签选择器：锄禾日当午</p>
+<div class="test1">class文本1</div>
+<div id="test2">id文本2</div>
+<div class="test3">
+    <p>嵌套标签：aaa</p>
+</div>
+<div >
+    <p>嵌套标签：汗滴禾下土</p>
+</div>
+<input type="text">
+<div class="a">1</div>
+<div class="b">2</div>
+<div class="a b">3</div>
+<!--id唯一
+class可多次出现
+-->
+</body>
+</html>
