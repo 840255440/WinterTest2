@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style>
+         *{
+             padding: 0;
+             margin: 0;
+         }
+         .zhuye{
+             background: url("zhuye.jpg");
+             height: 588px;
+             width: 2560px;
+             margin-left: 0px;
+         }
+        .logo{
+            height: 98px;
+            width: 200px;
+            background: url("mistore_logo.png");
+        }
+        .login
+        {
+            position: absolute;
+            height: 500px;
+            width: 400px;
+            left: 60%;
+            margin-top: 44px;
+            margin-bottom: 44px;
+            margin-left: 100px;
+            background-color: white;
+        }
+         ul{
+             list-style: none;
+             margin-left: 0;
+         }
+         li{
+             display: inline-block;
+             margin-left: 1px;
+             border-color: antiquewhite;
+         }
+         .binakuang{
+             border-right: solid;
+             margin-right: 1px;
+         }
+         a {
+             text-decoration: none;
+             margin-left: 40px;
+             padding: 10px;
+             width: 120px;
+             text-transform: uppercase;
+             display: block;
+             color: #292929;
+             font-weight: bold;
+             font-size: 28px;
+         }
+         .login2{
+             width: 400px;
+             height: 30px;
+             position: absolute;
+         }
+         .loginname{
+             display: inline-block;
+             margin-top: 100px;
+             margin-left: 50px;
+             position: relative;;
+             width: 300px;
+             height: 60px;
+             border: solid burlywood;
+         }
+         .name{
+             margin: 18px;
+             border-color: white;
+             width: 260px;
+
+         }
+         .loginpassword{
+             display: inline-block;
+             margin-top: 10px;
+             margin-left: 50px;
+             position: relative;;
+             width: 300px;
+             height: 60px;
+             border: solid burlywood;
+         }
+         .password{
+             margin: 18px;
+             border-color: white;
+             width: 260px;
+         }
+         a:hover {color:#FF00FF;}   /* 鼠标指针移动到链接上 */
+        .button
+        {
+            margin-left: 52px;
+            margin-top: 10px;
+            width: 300px;
+            height: 60px;
+        }
+        .buttoncheck
+        {
+            width: 300px;
+            height: 60px;
+            background-color: coral;
+            border: none;
+        }
+        div span {
+            position: absolute;
+            margin-left: 10px;
+        }
+        .shoujidenglu
+        {
+            width: 70px;
+            font-size: smaller;
+            white-space:nowrap;
+        }
+        .lijizhuce
+        {
+            width: 35px;
+            font-size: smaller;
+            white-space:nowrap;
+        }
+        .wangjimima{
+            white-space:nowrap;
+            width: 35px;
+            font-size: smaller;
+        }
+        .qita{
+            margin-top: 30px;
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+        }
+         .icon ul li{
+             display: inline-block;
+             background-image: url("icons_type.png");
+             background-color: #0000FF;
+             width: 18px;
+             height: 18px;
+             margin-right: 10px;
+             display: inline-block;
+             vertical-align: middle;
+         }
+         .icon li{
+             height: 22px;
+             width: 22px;
+         }
+         .qq{
+             border-radius: 50%;
+             width: 18px;
+             height: 18px;
+             background-position: -18px 0px;
+         }
+         .weibo{
+             background-position: -36px 0px;    width: 18px;
+             height: 18px;
+
+             border-radius: 50%;
+         }
+         .pay{
+             background-position: -54px 0px;
+             width: 18px;
+             height: 18px;
+             border-radius: 50%;
+         }
+         .weixin{
+             background-position: -82px 0px;
+             width: 18px;
+             height: 18px;
+             border-radius: 50%;
+         }
+    </style>
+</head>
+<body>
+<div class="logo">
+</div>
+<div class="zhuye">
+    <div class="login">
+        <div class="login2">
+        <ul>
+            <li class="binakuang"><a href="">账号登陆</a></li>
+            <li><a href="">密码登陆</a></li>
+        </ul>
+        </div>
+        <div class="loginname">
+            <input type="text" class="name" placeholder="邮箱/手机号码/小米ID" >
+        </div>
+        <div class="loginpassword">
+            <input type="text" class="password" placeholder="密码">
+    </div>
+        <div class="button">
+        <input type="button" class="buttoncheck" value="登录">
+    </div>
+        <div>
+            <ul>
+                <li><a href="" class="shoujidenglu">手机短信登录|注册</a></li>
+                <li><a href="" class="lijizhuce">立即注册</a></li>
+                <li><a href="" class="wangjimima">忘记密码</a></li>
+            </ul>
+
+        </div>
+        <fieldset class="qita">
+            <legend align="center" >其他方式登录</legend>
+        </fieldset>
+        <div class="icon" >
+            <ul>
+                <li class="qq"></li>
+                <li class="weibo"></li>
+                <li class="pay"></li>
+                <li class="weixin"></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
