@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* header css start */
+.header a{
+    display: block;
+}
+.header{
+    line-height: 0;
+    width: 1130px;
+    margin: 0 auto;
+}
+/* header css end */
+/*global css start*/
+.clearfix:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+/*global css end*/
+/* container css start */
+.container{
+    background: url("../images/zhuye.jpg") top center no-repeat;    /* background: #1e2f40; */
+    width: 100%;
+    height: 588px;
+    position: absolute;
+    left: 0;
+    top: 98px;
+}
+.container .login-bar{
+    width: 1130px;
+    margin: 0 auto
+}
+.container  .login-form{
+    float: right;
+    margin-top: 32px;
+    width: 410px;
+    min-height: 524px;
+    margin-bottom: 0;
+    margin-right: 0;
+    font-size: 14px;
+    z-index: 4;
+    background: white;
+}
+.container .border-line{
+    margin: 0 35px 0 35px;
+    border: 1px solid #e0e0e0;
+}
+.container .top-text{
+    padding: 27px 0px 24px;
+    text-align: center;
+}
+.container .top-text a{
+    text-decoration: none;
+    font-size: 24px;
+    color: #666666;
+}
+.container .top-text a:first-child{
+    color: #f56600;
+}
+.container .top-text  a:hover{
+    color: #f56600;
+}
+.container .login-input{
+    width: 348px;
+    margin: 0 auto;
+}
+.container .login-input input{
+    height: 22px;
+    width: 306px;
+    line-height: 22px;
+    padding: 13px 16px 13px 14px;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+.container .login-context{
+    width: 348px;
+    margin: 0 auto;
+}
+.container .login-btn input[type="submit"]{
+    background-color: #ef5b00;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    margin-bottom: 14px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    cursor: pointer;
+}
+.container .small-text{
+    font-size: 14px;
+    color: #757575;
+}
+.container .small-text a{
+    text-decoration: none;
+    color: #757575;
+}
+.container .st-left{
+    float: left;
+}
+.container .st-left a{
+    color: #f56600;
+}
+.container .st-right{
+    float: right;
+}
+.container .st-right a:hover{
+    color: #f56600;
+}
+.container .login-type fieldset{
+    border: 0;
+    border-top:1px solid #bbb;
+    font-size: 14px;
+    color: #bbb;
+    padding-top: 20px;
+}
+
+.container .login-type{
+    padding-top: 115px;
+    padding-bottom: 10px;
+}
+.container .login-icon{
+    text-align: center;
+}
+.container .login-icon a{
+    width: 30px;
+    height: 30px;
+    background-color: #757575;
+    display: inline-block;
+    border-radius: 50% ;
+    margin: 0 17px;
+    top:20px
+}
+.container .login-icon i{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url("../images/icons_type.png");
+    margin: 4px auto 0;
+}
+.container  .qq i{
+    background-position: -19px 0;
+}
+.container  .qq:hover{
+    background:#0288d1;
+}
+.container  .sina i{
+    background-position: -38px 0;
+}
+.container  .sina:hover{
+    background:#dd3322;
+}
+.container  .wechat i{
+    margin-top: 6px;
+    background-position: -84px 0;
+    width: 23px;
+}
+.container  .wechat:hover{
+    background: #00d20d;
+}
+.container .alipay i{
+    background-position: -57px 0;
+    width: 25px;
+}
+.container  .alipay:hover{
+    background:#0288d1;
+
+}
+
+/* container css end */
