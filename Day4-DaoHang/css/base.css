@@ -1,0 +1,316 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.header .clearfix:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.home .clearfix:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*topbar start*/
+.topbar{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    /*垂直居中显示*/
+    background-color: #333;
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.topbar .content{
+    width: 1226px;
+    height: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #333;
+}
+
+.topbar  span {
+    margin: 0 3px;
+    color: #b0b0b0;
+}
+.topbar .topbar-left{
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+.topbar  a{
+    text-decoration: none;
+    color: #b0b0b0;
+}
+.topbar a:hover{
+    color: white;
+}
+.topbar .topbar-right{
+    float: right;
+}
+.topbar .topbar-right .cart-mimi{
+    background-color: #424242;
+    display: block;
+    height: 40px;
+    width: 120px;
+    float: right;
+    text-align: center;
+    margin:0 30px;
+}.topbar .cart-mimi:hover{
+    color: #ff6700;
+ }
+
+/*topbar end*/
+/*header start*/
+.header .header-left .logo{
+    display: block;
+    height: 55px;
+    width: 55px;
+    background-color: #f56700;
+}
+header .category-list .title{
+    display: block;
+    height: 55px;
+    width: 55px;
+    color: white;
+}
+.header .content{
+    width: 1226px;
+    padding: 20px 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+.header{
+    position: relative;
+    z-index: 20;
+    height: 100px;
+}
+.header .header-left .logo:after{
+    display: block;
+    content: "";
+    width: 55px;
+    height: 55px;
+    background: url("../images/mi-logo.png") center;
+}
+.header .header-left{
+    float: left;
+}
+.header .site-category .category-list{
+    padding: 20px 0;
+    height: 420px;
+    border: 0;
+    color: #fff;
+    background: #333;
+    background: rgba(0,0,0,0.6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#99000000", endColorstr="#99000000")\9;
+}
+.header .category-list .title{
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    height: 42px;
+    line-height: 42px;
+    white-space:nowrap;
+    text-decoration: none;
+    color: white;
+}
+.header .site-category li{
+    list-style: none;
+    font-size: 16px;
+    color: whitesmoke;
+}
+.header .site-category{
+    position: absolute;
+    top: 100px;
+    width:234px;
+    height: 460px;
+    z-index: 100;
+    white-space:nowrap;
+}
+.header .category-list a:hover{
+    background-color: #f56600;
+}
+.header .category-list i{
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    color: #e0e0e0;
+}
+.header .header-center{
+    float: left;
+    margin-left: 180px;
+}
+.header .header-right{
+    float: right;
+}
+
+.header .header-center ul{
+    list-style: none;
+}
+.header .header-center li{
+    color: #333333;
+    font-size: 100%;;
+    float: left;
+    height: 55px;
+    line-height: 55px;
+    padding: 0 10px;
+    white-space:nowrap;
+}
+.header .header-center a{
+    color: #333;
+    font-size: 16px;
+   text-decoration: none;
+    text-align: center;
+}
+.header .header-right input{
+    height: 51px;
+    width: 214px;
+    display: inline-block;
+    padding: 1px 17px;
+}
+.header .header-right .search-btn{
+    float: right;
+     height: 55px;
+     width: 55px;
+     border: 1px solid #e0e0e0;
+    margin-left: -1px;
+ }
+.header-right{
+    position: relative;
+}
+.header .header-right a:hover{
+   background-color: #f56600;
+}
+.header .input-text a{
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 12px;
+    background: #eee;
+    color: #757575;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+.header  .search-btn{
+    text-decoration: none;
+    color: #616161;
+    font-size: 24px;
+    text-align: center;
+    line-height: 55px;
+}
+.header .header-right .input-text{
+    position: absolute;
+    top: 15px;
+    left: 122px;
+
+}
+/*header end*/
+/*home start*/
+.home{
+    position: relative;
+    width: 1226px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.home .content{
+    position: relative;
+    margin-bottom: 26px;
+}
+.home .content .ui-wrapper{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.home .content .ui-viewport{
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    height: 460px;
+}
+.home .ui-viewport img{
+    width: 1226px;
+    height: 460px;
+}
+.home div{
+    display: block;
+}
+.home .ui-paper a{
+    float: right;
+    color: #333333;
+}
+.home .ui-paper .ui-pager-item{
+    float: right;
+    text-decoration: none;
+}
+.home .ui-paper a{
+    text-decoration: none;
+}
+.home .ui-control {
+    position: relative;
+    top:430px;
+    right: 30px;
+}
+.home .ui-paper a{
+    color: #757575;
+    text-decoration: none;
+    display: block;
+    width: 6px;
+    height: 6px;
+    margin: 0 5px;
+    border: 2px solid #fff;
+    border-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    text-align: left;
+    text-indent: -9999px;
+    overflow: hidden;
+    _zoom: 1;
+    background: #f5f5f5;
+    background: rgba(0,0,0,0.4);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#66000000", endColorstr="#66000000")\9;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+.home .ui-pager-item a:hover{
+    background-color: red;
+}
+.home .ui-control .right-icon{
+    position: absolute;
+    left: 99%;
+    top: -250px;
+    width: 50px;
+    height: 50px;
+}
+.home .right-icon i{
+    font-size: 30px;
+}
+
+.home .ui-control a{
+    text-decoration: none;
+}
+/*home end*/
