@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="n">
+<span id="result" onclick="Result()">点击查看结果</span>
+<br>
+<button onclick="Luckman()">抽奖</button>
+<span id="result2" onclick="Result()">查看结果</span>
+<script>
+    var lucknum = 8;
+    var trynum = 0;
+    function Luckman() {
+        var oSpan = document.getElementById("result2");
+        var num = new Array(0);
+        for(var i = 0; i < 3; i++) {
+            num[i] = Math.floor(Math.random() * 10);
+            console.log(num[i]);
+        }
+        trynum += 3;
+        for(var j = 0; j < 3; j++)
+        {
+            console.log("查看"+num[j]);
+            if(num[j] == lucknum)
+            {
+                console.log("查看2"+num[j]);
+                var aaa = 3/trynum;
+                var a = aaa;
+                a = parseFloat(a.toFixed(2));
+                console.log("a="+a);
+                oSpan.innerHTML="恭喜中奖，您一共尝试"+trynum+"次，成功概率是"+a;
+                trynum = 0;
+                return;
+            }
+        }
+        oSpan.innerHTML="未中奖，再来一次吧";
+    }
+
+    function Result() {
+        var oN = document.getElementById("n");
+        var n = oN.value;
+        var oSpan = document.getElementById("result");
+        var result = 0;
+        for(var i = 1; i <= n; i++)
+        {
+            if(i % 2 == 0) {
+                result -= 1/(2*i - 1);
+            }
+            else
+            {
+                result += 1/(2*i - 1);
+            }
+        }
+        oSpan.innerHTML = "结果是"+result;
+    }
+//    利用全局变量和函数，设计模拟幸运数字机游戏。设幸运数字为8，
+//    每次由计算机随机产生3个1-9之间(包括1和9）的随机数，
+//    当这3个随机数中有一个数字为8时，就算赢了一次，要求利用函数计算获胜率。
+
+
+</script>
+</body>
+</html>

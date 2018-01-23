@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="str">
+<span id="result" onclick="CollectDigits()">点击查看结果</span>
+<h2 id="welcome"></h2>
+<input type="text" id="year">
+<input type="text" id="month">
+<input type="text" id="day">
+<button onclick="Day()">测试</button>
+<h3 id ="result2"></h3>
+<script>
+    oWelcome = document.getElementById("welcome");
+    var myDate = new Date();//获取系统当前时间
+    myDate.getYear(); //获取当前年份(2位)
+    myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+    myDate.getMonth(); //获取当前月份(0-11,0代表1月)
+    myDate.getDate(); //获取当前日(1-31)
+    myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+    myDate.getTime(); //获取当前时间(从1970.1.1开始的毫秒数)
+    myDate.getHours(); //获取当前小时数(0-23)
+    myDate.getMinutes(); //获取当前分钟数(0-59)
+    myDate.getSeconds(); //获取当前秒数(0-59)
+    myDate.getMilliseconds(); //获取当前毫秒数(0-999)
+    myDate.toLocaleDateString(); //获取当前日期
+    var mytime = myDate.toLocaleTimeString(); //获取当前时间
+    myDate.toLocaleString( ); //获取日期与时间
+    oWelcome.innerHTML = "现在是"+(myDate.getYear()+1899)+"年"+(myDate.getMonth()+1)+"月"+myDate.getDate()+"日"+myDate.getHours()+
+        "点"+myDate.getMinutes()+"分"+myDate.getSeconds()+"秒"+"（星期"+myDate.getDay()+")，欢迎您的到访！";
+
+    function CollectDigits() {
+        var oStr = document.getElementById("str");
+        var oSpan = document.getElementById("result");
+        var str = oStr.value;
+        var strr = new Array("1", "2", "3", "4", "5", "6", "7",
+        "8", "9", "0"
+    )
+        var strrr = "";
+        for(var i = 0; i < str.length; i++)
+        {
+            for(var j = 0; j < strr.length; j++)
+            {
+                if(str[i] == strr[j])
+                {
+                    strrr += strr[j];
+                    break;
+                }
+            }
+        }
+        console.log(strr);
+        oSpan.innerHTML = strrr;
+    }
+    
+    function Day() {
+        var oYear = document.getElementById("year");
+        var year = oYear.value;
+        var oMonth = document.getElementById("month");
+        var month = oMonth.value;
+        var oDay = document.getElementById("day");
+        var day = parseInt(oDay.value);
+        console.log(day);
+        var oSpan = document.getElementById("result2");
+        var months = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31,30, 31
+    )
+        ;
+        if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+            console.log(year);
+            months[1] = 29;
+        }
+        var num = 0;
+        for(var i = 0; i < month-1; i++)
+        {
+            num += months[i];
+        }
+        console.log(num);
+        num += day;
+        oSpan.innerHTML = "这是第"+num+"天";
+    }
+</script>
+</body>
+</html>

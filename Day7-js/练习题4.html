@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<!--编写一个判断某个非负整数是否能够同时被3,5,7整除的函数，-->
+<!--然后在页面上输出1~1000之间所有能同时被3,5,7整除的整数，-->
+<!--并要求每行显示6个这样的数。-->
+<script>
+    var j = 0;
+    for(var i = 0 ; i < 1000; i++)
+    {
+        if(i%3==0&&i%5==0&&i%7==0)
+        {
+            j++
+            document.write(i+"&nbsp");
+            if(j%6 == 0)
+            {
+                document.write("<br>");
+            }
+        }
+    }
+    document.write("<br>");
+    var k = 0;
+    for(var i = 100; i < 1000; i++)
+    {
+        for(var j = 2; j <= i-1; j++)
+        {
+            if(i%j==0)
+            {
+              break;
+            }
+            if(j == i-1)
+            {
+                k++;
+                document.write(i+"&nbsp");
+                if(k%6 == 0)
+                {
+                    document.write("<br>");
+                }
+            }
+        }
+    }
+    document.write("<br>");
+//    5.	编写一个非递归函数factorial(n)，计算12!-10!的结果。
+    function factorial(n) {
+        var sum = 1;
+        for(var i = 1; i <= n; i++)
+        {
+            sum *= i;
+        }
+        return sum;
+    }
+    document.write(factorial(2) - factorial(1)+"<br>");
+
+//    7.	斐波纳契（Fibonacci）数列的第一项是1，第二项是1，
+//    以后各项都是前两项的和。试用递归函数和非递归函数各编写一个程序，求斐波纳契数列第N项的值。
+    function GetNum1(n) {
+        var a = new Array();
+        a[1] = 1;
+        a[2] = 1
+        for(i = 3; i <= n; i++)
+        {
+              a[i] = a[i-1] + a[i-2];
+        }
+        document.write("a["+n+"]="+a[n]);
+    }
+    GetNum1(4);
+    document.write("<br>");
+    function GetNum2(n) {
+        if(n == 1 || n == 2)
+        {
+            return 1;
+        }
+        else
+        {
+            return GetNum2(n - 1) + GetNum2(n - 2);
+        }
+
+    }
+    document.write(GetNum2(4));
+    document.write("<br>");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Author" content="网页作者" />
+    <meta name="Copyright" content="网站版权" />
+    <meta name="keywords" content="网站关键字" />
+    <meta name="description" content="网站描述" />
+    <title>Document</title>
+    <style>
+        body,dl,dd,dt,p,h1,h2,h3,h4,h5,h6{ margin: 0;}
+        ul,ol{margin: 0; list-style: none; padding: 0;}
+        a{ text-decoration: none; color:inherit; }
+        *{ margin: 0; padding: 0; }
+        a img{ display:block; border:none;}
+        .clearfix:after{ content:""; display: block; clear: both;}
+        .fl-l{ float: left;}
+        .fl-r{ float: right;}
+        body{ background: #000 url("images/bg2.jpg")no-repeat 0 40px/cover;}
+
+        div.header {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: auto;
+            height: 40px;
+            width: 100px;
+        }
+
+        .header a {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 40px;
+            /*background: #fff;*/
+            font: 20px/40px "";
+            text-align: center;
+            color: #fff;
+        }
+
+        .header p {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            display: none;
+            width: 550px;
+            height: 300px;
+            background: url("images/bg.jpg");
+        }
+
+        .header > img {
+            width: 100%;
+        }
+        </style>
+</head>
+<body>
+    <div class="header" id="header">
+        <a href="" id="oa">装扮</a>
+        <p id="op"></p>
+    </div>
+    <script>
+        var oHeader = document.getElementById("header");
+        var oA = document.getElementById("oa");
+        var oP = document.getElementById("op");
+
+        oHeader.onmouseenter = function () {
+            oA.style.background = "#fff";
+            oA.style.color = "#000";
+            oP.style.display = "block";
+        };
+        oHeader.onmouseleave = function () {
+            oA.style.background = "#000";
+            oA.style.color = "#fff";
+            oP.style.display = "none";
+        }
+    </script>
+</body>
+</html>

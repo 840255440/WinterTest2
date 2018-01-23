@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var have = window.prompt("有没有对象");
+    var girl;
+    girl = {
+        age: "15",
+        home: "北京",
+        family:{
+            mother:"小兰",
+            father:"马云"
+        }
+    };
+    if(have == "有" || have == "没有")
+    {
+        if(have = "有")
+        {
+            girl.name = window.prompt("她叫什么名字");
+            girl.age = window.prompt("她多大了");
+            alert("姓名"+girl.name);
+        }
+        else
+        {
+            alert("赶快去找吧");
+        }
+    }
+    else{
+        alert("滚");
+    }
+</script>
+</body>
+</html>

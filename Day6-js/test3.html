@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<script>
+    for(i = 0 ; i < 10; i++){
+        var a = Math.random();
+        var a = a * 5;
+        a = Math.floor(a);
+        document.write(a+"<br>")
+    }
+
+    var which = window.confirm("想吃东西么");
+    if(which)
+    {
+        var num = window.prompt("你们几个人吃啊");
+        var people = new Array();
+        for(var i = 0; i < num; i++)
+        {
+            people.push(window.prompt("第"+(i+1)+"个人叫什么"));
+            if(!isNaN(people[i]))
+            {
+                alert("不吃拉倒");
+                break;
+            }
+        }
+        if(people.length == num) {
+            for (i = 0; i < num; i++) {
+                var a = Math.random();
+                var a = a * 4;
+                var str = "";
+                a = Math.floor(a)+1;
+                switch (a) {
+                    case 1:
+                        str = "吃汉堡";
+                        break;
+                    case 2:
+                        str = "吃薯条";
+                        break;
+                    case 3:
+                        str = "喝可乐";
+                        break;
+                    case 4:
+                        str = "下馆子";
+                        break;
+                    default:
+                        str = "喝西北风";
+                }
+                alert("推荐:" + people[i] + str);
+            }
+        }
+    }
+    else
+    {
+        alert("知道还问我");
+    }
+</script>
+</body>
+</html>

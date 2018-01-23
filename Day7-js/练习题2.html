@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+<!--1.	编写程序．通过用户输入的年龄判断是哪个年龄段的人-->
+<!--（儿童：年龄＜14；青少年：14<=年龄＜24；青年：24<年龄＜40; 中年：40＜=年龄＜60; 老年：年龄>=60），-->
+<!--并在页面上输出判断结果。-->
+<input type="text" id = "age">
+<span id = "result"></span>
+<button onclick="checkage()">判断</button>
+<br>
+<script>
+    function checkage()
+    {
+        var agee = document.getElementById("age");
+        var age = parseInt(agee.value);
+        var oSpan = document.getElementById("result");
+        console.log(age);
+        if(age < 14) {
+            oSpan.innerHTML = "儿童";
+        }
+        else if((age >= 14) && (age < 24)) {
+            oSpan.innerHTML = "青少年";
+        }
+        else if(age > 24 && age < 40) {
+            oSpan.innerHTML = "青年";
+        }
+        else if(age >= 40 && age < 60) {
+            oSpan.innerHTML = "中年";
+        }
+        else if(age > 60) {
+            oSpan.innerHTML = "老年";
+        }
+        else
+        {
+                oSpan.innerHTML = "输入有误";
+        }
+    }
+    function jiecheng(a) {
+        if(a > 1)
+        {
+            return a*jiecheng(a-1);
+        }
+        else
+        {
+            return 1;
+        }
+    }
+    document.write(jiecheng(5)+"<br>");
+    function jiechenghe(a) {
+        if(a > 1)
+        {
+            return jiecheng(a)+jiecheng(a - 1);
+        }
+        else
+        {
+            return 1;
+        }
+    }
+    document.write(jiechenghe(3)+"<br>");
+    function shuchu(a) {
+        for(var i = 0; i < a; i++)
+        {
+            for(var j = 0; j < i ; j++)
+            {
+                document.write(j+"&nbsp");
+            }
+            document.write("<br>");
+        }
+    }
+    shuchu(5);
+//    7.	有一个三位数x，被4除余2，被7除余3，被9除余5，请求出这个数。
+    document.write("结果是:");
+    for(var i = 100; i<=999 && i >=100; i++)
+    {
+        if(i % 4 == 2 )
+        {
+            if(i % 7 == 3)
+            {
+               if(i % 9 == 5)
+               {
+                   document.write("&nbsp"+i);
+
+               }
+            }
+
+        }
+    }
+//    8.	求所有满足条件的四位数ABCD，它是13的倍数，且第3位数加上第2位数等于第4位数（即：A=B+C）。
+//    （提示：对于四位数的整数x，通过Math.floor(x/1000)可求出第4位的数字，其他位数的提取也类似）
+    document.write("结果是:");
+    for(var n = 1000; n<=9999 && i >=1000; n++)
+    {
+        if(n % 13 == 0)
+        {
+            var a = Math.floor(n/1000);
+            var b = Math.floor((n/100)%10);
+            var c = Math.floor((n/10)%10);
+            if(b + c == a)
+            {
+                document.write(" "+n);
+            }
+        }
+    }
+    function add() {
+        var sum = 0;
+        for (var i = 0, j = arguments.length; i < j; i++) {
+            sum += arguments[i];
+        }
+        return sum;
+    }
+document.write("1+2+3="+add(1,2,3));
+</script>
+</body>
+</html>
