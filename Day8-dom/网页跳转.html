@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<style>
+    div{
+        margin: auto;
+        width: 200px;
+        height: 200px;
+    }
+</style>
+<body>
+<div class="box">
+<input type="text" style="width: 100px;margin: auto">
+    <button id="enter" style="margin: auto;">跳转</button>
+</div>
+<script>
+    var aUrl = document.getElementsByTagName("input");
+    var oBtn = document.getElementById("enter");
+    oBtn.onclick = function () {
+        location.href = "http://"+aUrl[0].value;
+    }
+    aUrl[0].onkeydown = function (e) {
+        var url = aUrl.value;
+        var keyCod = e.keyCode;
+        if(keyCod == 13)
+        {
+            location.href = "http://"+url;
+        }
+    }
+    var patt1=new RegExp("e");
+
+    document.write(patt1.test("The best things in life are free"));
+</script>
+</body>
+</html>

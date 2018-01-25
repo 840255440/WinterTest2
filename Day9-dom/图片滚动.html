@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+        }
+        .header{
+            margin: 0 auto;
+            width: 500px;
+            height: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .header img{
+            width: 500px;
+            height: 300px;
+        }
+        .bottom{
+            position: absolute;
+            top: 270px;
+            width: 500px;
+            height: 20px;
+        }
+        .bottom-left li{
+            float: left;
+            list-style-type: none;
+            margin-right: 10px;
+        }
+
+        .bottom-right li{
+            float: left;
+            list-style-type: none;
+            margin-right: 10px;
+        }
+        .bottom .bottom-left{
+            position: absolute;
+            left: 8px;
+        }
+        .bottom .bottom-right{
+            position: absolute;
+            right: 5px;
+        }
+        .bottom i{
+            font-style: normal;
+            text-align: center;
+            line-height: 20px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #dddddd;
+            border-color: #ff6700;
+            background: #ff6700;
+            color: white;
+        }
+        i:hover{
+            background-color: #FF00FF;
+        }
+    </style>
+</head>
+<body>
+<div class="header"><img src="" alt="">
+    <div class="bottom">
+        <div class="bottom-left">
+            <ul>
+                <li><i class="left">&lt;</i></li>
+                <li><i class="left">&gt;</i></li>
+            </ul>
+        </div>
+        <div class="bottom-right">
+            <ul>
+                <li><i src="images/1.jpg" class="right">1</i></li>
+                <li><i src="images/2.jpg" class="right">2</i></li>
+                <li><i src="images/3.jpg" class="right">3</i></li>
+                <li><i src="images/4.jpg" class="right">4</i></li>
+                <li><i src="images/5.jpg" class="right">5</i></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    var aRa = document.getElementsByClassName("right");
+    var oImg = document.getElementsByTagName("img");
+    var oLe = document.getElementsByClassName("left");
+    oImg[0].src = "images/1.jpg";
+    for(var i = 0; i < aRa.length; i++)
+    {
+        aRa[i].onclick = function () {
+            for(var j = 0; j < aRa.length; j++) {
+                aRa[j].style.backgroundColor = "#ff6700";
+            }
+            oImg[0].src = "";
+            ii = this.index;
+            var src = this.getAttribute("src");
+            this.style.backgroundColor = "#FF00FF";
+            console.log(src);
+            oImg[0].src = src;
+
+        }
+    }
+    oLe[1].onclick = function () {
+        if(ii == 5){
+            ii = 1;
+        }else{
+            ii++;
+        }
+        oImg[0].src = "images/"+ii+".jpg";
+    }
+    oLe[0].onclick = function () {
+        if(ii == 1){
+            ii = 5;
+        }else{
+            ii--;
+        }
+        oImg[0].src = "images/"+ii+".jpg";
+    }
+</script>
+</body>
+</html>

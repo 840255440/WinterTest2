@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        .header{
+            position: relative;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            /*left: 50%;*/
+            background-color: #5f5750;
+            text-align: center;
+        }
+        .header button{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h3 time="" id="daojishi" style="top:0;width: 20px;height: 20px;text-align: center;margin: 0 auto"></h3>
+    <button id="btn" >开始</button>
+</div>
+<script>
+    var oDao = document.getElementById("daojishi");
+    var oBtn = document.getElementById("btn");
+    var key = 1;
+//    var oStop = document.getElementById("stop");
+    var i = 100;
+    function changerNum() {
+        i--;
+        oDao.innerText = i;
+    }
+    var timer;
+//        var timer =  setInterval("changerNum()", 1000);
+        oBtn.onclick = function () {
+        if(key == 1) {
+            timer = setInterval("changerNum()", 1000);
+            oBtn.innerText="暂停";
+        }else{
+            clearInterval(timer);
+            oBtn.innerText="开始";
+        }
+        key *=-1;
+        }
+
+</script>
+</body>
+</html>

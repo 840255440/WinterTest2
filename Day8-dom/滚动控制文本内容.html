@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<style>
+    /*.list{*/
+        /*top: 0;*/
+        /*width: 600px;*/
+        /*border-bottom: 1px black solid;*/
+        /*height: 100px;*/
+    /*}*/
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        position: absolute;
+        top: 0;
+        list-style-type: none;
+        height: 100px;
+        width: 600px;
+        background: black;
+    }
+    div ul li{
+        position: relative;
+        float: left;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        color: whitesmoke;
+        line-height: 100px;
+    }
+    li:hover{
+        background: #5f5750;
+    }
+</style>
+<body>
+<div style="margin: 0 auto; width:600px;height: 600px;border:1px black solid ">
+        <ul>
+            <li text="123">第一课</li>
+            <li text="456">第二课</li>
+            <li text="789">第三课</li>
+        </ul>
+    <div style="position:absolute;top:210px"><span id="test"></span></div>
+</div>
+<script>
+    var oLi = document.getElementsByTagName("li");
+    var oTest = document.getElementById("test");
+    for(var i = 0; i < oLi.length; i++)
+    {
+        oLi[i].onmouseover = function () {
+            var text = this.getAttribute("text");
+            console.log(text);
+            oTest.innerText = text;
+        }
+    }
+</script>
+</body>
+</html>

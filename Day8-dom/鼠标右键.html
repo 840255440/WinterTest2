@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            position: absolute;
+            list-style-type: none;
+            border: 1px solid #ddd;
+            width: 150px;
+            text-align: center;
+            display: none;
+        }
+        ul li{
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul-menu" class="ul-menu1">
+    <li links="www.baidu.com">待办</li>
+    <li>已读</li>
+    <li>未读</li>
+    <li>删除</li>
+</ul>
+<script>
+    var oUl = document.getElementById("ul-menu");
+//    var aUl = document.getElementsByTagName("ul");
+//    var aUl = document.getElementsByClassName("ul-menu1");
+    var aLi = document.getElementsByTagName("li");
+    document.oncontextmenu = function (e) {
+        e = e || window.event;
+        oUl.style.display = "block";
+        oUl.style.top = e.clientY+"px";
+        oUl.style.left = e.clientX+"px";
+        return false;
+    }
+    document.onclick = function () {
+        oUl.style.display = "none";
+    }
+    for(var i = 0 ; i < aLi.length; i++)
+    {
+        aLi[i].onclick = function () {
+            var thisLink = this.getAttribute("links");
+            location.href = "http://"+thisLink;
+            var test = this.innerText;
+            alert(test);
+        }
+    }
+</script>
+</body>
+</html>

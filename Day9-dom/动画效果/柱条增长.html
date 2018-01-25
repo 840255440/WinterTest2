@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+        #box1{background-color: #ff6700;width: 200px;height: 50px}
+    </style>
+</head>
+<body>
+<div id="box1">
+    <script>
+        var oBox1 = document.getElementById("box1");
+        var length = oBox1.offsetWidth;
+        function changeBig() {
+            if(length <= 400) {
+                length += 5;
+//                console.log(length);
+            }
+            return length;
+        }
+        function changeSmall() {
+            if(length>=200) {
+                length = length - 5;
+                console.log(length);
+            }
+            return length;
+        }
+        var timer;
+        oBox1.onmouseover = function () {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                oBox1.style.width = changeBig()+"px";
+            },100);
+        }
+        oBox1.onmouseleave = function () {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                oBox1.style.width = changeSmall()+"px";
+            },100);
+        }
+    </script>
+</div>
+</body>
+</html>
