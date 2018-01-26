@@ -5,14 +5,19 @@
     <title>Title</title>
     <style>
         *{margin: 0;padding: 0}
+        div{margin-bottom: 30px}
         #box1{background-color: #ff6700;width: 200px;height: 50px}
+        .box{background-color: #ff6700;width: 200px;height: 50px}
     </style>
 </head>
 <body>
-<div id="box1">
+<div id="box1"></div>
+<div class="box"></div>
+<div class="box"></div>
     <script>
         var oBox1 = document.getElementById("box1");
-        var length = oBox1.offsetWidth;
+        var oBox = document.getElementsByClassName("box");
+        var length = 200;
         function changeBig() {
             if(length <= 400) {
                 length += 5;
@@ -21,7 +26,7 @@
             return length;
         }
         function changeSmall() {
-            if(length>=200) {
+            if(length>200) {
                 length = length - 5;
                 console.log(length);
             }
@@ -30,17 +35,64 @@
         var timer;
         oBox1.onmouseover = function () {
             clearInterval(timer);
+            clearInterval(timer1);
             timer = setInterval(function () {
                 oBox1.style.width = changeBig()+"px";
             },100);
         }
         oBox1.onmouseleave = function () {
             clearInterval(timer);
+            clearInterval(timer1);
             timer = setInterval(function () {
                 oBox1.style.width = changeSmall()+"px";
             },100);
         }
+        var timer1;
+        oBox[0].onmouseleave = function () {
+            clearInterval(timer);
+            timer1 = setInterval(function () {
+                oBox[0].style.width = changeSmall()+"px";
+            },100);
+        }
+        oBox[0].onmouseover = function () {
+            clearInterval(timer1);
+            timer1 = setInterval(function () {
+                oBox[0].style.width = changeBig()+"px";
+            },100);
+        }
+        var timer2;
+//        oBox[1].onmouseleave = function () {
+//            clearInterval(timer2);
+//            timer2 = setInterval(function () {
+//                oBox[1].style.width = changeSmall()+"px";
+//            },100);
+//        }
+//        oBox[1].onmouseover = function () {
+//            clearInterval(timer2);
+//            timer2 = setInterval(function () {
+//                oBox[1].style.width = changeBig()+"px";
+//            },100);
+//        }
+//        var timer1 = new Array(2);
+//                for(var i = 0; i < oBox.length; i++) {
+//                    oBox[i].index = i;
+//                    oBox[i].onmouseover = function (){
+//                            clearInterval(timer1[1]);
+//                        timer1[this.index] = setInterval(function () {
+//                            oBox[0].style.width = changeBig()+"px";
+//                    },100);
+//                    }
+//                }
+//                for(var i = 0; i < oBox.length; i++) {
+//                    oBox[i].index = i;
+//                    oBox[i].onmouseleave = function () {
+//                            clearInterval(timer1[1]);
+//                        timer1[this.index] = setInterval(function () {
+//                            oBox[0].style.width = changeSmall() + "px";
+//                        }, 100);
+//                    }
+//                }
+
     </script>
-</div>
 </body>
 </html>
