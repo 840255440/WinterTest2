@@ -11,56 +11,89 @@
     </style>
 </head>
 <body>
-<div id="box1"></div>
+<div class="box"></div>
 <div class="box"></div>
 <div class="box"></div>
     <script>
-        var oBox1 = document.getElementById("box1");
         var oBox = document.getElementsByClassName("box");
         var length = 200;
-        function changeBig() {
-            if(length <= 400) {
-                length += 5;
+        for(var i = 0; i < oBox.length; i++){
+            WidthChange(oBox[i]);
+        }
+        function WidthChange(obj) {
+            obj.onmouseover = function () {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function () {
+                   if(obj.offsetWidth <600){
+                       obj.style.width = obj.offsetWidth +10 +"px";
+                   }else{
+                       clearInterval(obj.timer);
+                   }
+                }, 100)
+            }
+            obj.onmouseleave = function () {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function () {
+                    if(obj.offsetWidth > 200){
+                        obj.style.width = obj.offsetWidth - 10 + "px";
+                    }else{
+                        clearInterval(obj.timer)
+                    }
+                }, 100);
+            }
+        }
+//        function changeBig() {
+//            if(length <= 400) {
+//                length += 5;
+////                console.log(length);
+//            }
+//            return length;
+//        }
+//        function changeSmall() {
+//            if(length>200) {
+//                length = length - 5;
 //                console.log(length);
-            }
-            return length;
-        }
-        function changeSmall() {
-            if(length>200) {
-                length = length - 5;
-                console.log(length);
-            }
-            return length;
-        }
-        var timer;
-        oBox1.onmouseover = function () {
-            clearInterval(timer);
-            clearInterval(timer1);
-            timer = setInterval(function () {
-                oBox1.style.width = changeBig()+"px";
-            },100);
-        }
-        oBox1.onmouseleave = function () {
-            clearInterval(timer);
-            clearInterval(timer1);
-            timer = setInterval(function () {
-                oBox1.style.width = changeSmall()+"px";
-            },100);
-        }
-        var timer1;
-        oBox[0].onmouseleave = function () {
-            clearInterval(timer);
-            timer1 = setInterval(function () {
-                oBox[0].style.width = changeSmall()+"px";
-            },100);
-        }
-        oBox[0].onmouseover = function () {
-            clearInterval(timer1);
-            timer1 = setInterval(function () {
-                oBox[0].style.width = changeBig()+"px";
-            },100);
-        }
-        var timer2;
+//            }
+//            return length;
+//        }
+
+//        var timer;
+//        var timerbool = true;
+//        oBox1.onmouseover = function () {
+//            timerbool = true;
+//            clearInterval(timer);
+//            if(timerbool) {
+//                timer = setInterval(function () {
+//                    oBox1.style.width = changeBig() + "px";
+//                }, 100);
+//            }
+//        }
+//        oBox1.onmouseleave = function () {
+//            timerbool = false;
+//            clearInterval(timer);
+//            if(!timerbool) {
+//               timer = setInterval(function () {
+//                    oBox1.style.width = changeSmall() + "px";
+//                }, 100);
+//            }
+//        }
+//        var timerbool1 = true;
+//        var timer1;
+//        oBox[0].onmouseleave = function () {
+//            timerbool1 = true;
+//            clearInterval(timer);
+//            timer1 = setInterval(function () {
+//                oBox[0].style.width = changeSmall()+"px";
+//            },100);
+//        }
+//        oBox[0].onmouseover = function () {
+//            timerbool1 = false;
+//            clearInterval(timer1);
+//            timer1 = setInterval(function () {
+//                oBox[0].style.width = changeBig()+"px";
+//            },100);
+//        }
+//        var timer2;
 //        oBox[1].onmouseleave = function () {
 //            clearInterval(timer2);
 //            timer2 = setInterval(function () {
@@ -73,22 +106,25 @@
 //                oBox[1].style.width = changeBig()+"px";
 //            },100);
 //        }
-//        var timer1 = new Array(2);
+//        let timer1 = new Array(2);
 //                for(var i = 0; i < oBox.length; i++) {
 //                    oBox[i].index = i;
 //                    oBox[i].onmouseover = function (){
-//                            clearInterval(timer1[1]);
-//                        timer1[this.index] = setInterval(function () {
-//                            oBox[0].style.width = changeBig()+"px";
+//                        console.log(this.index);
+//                            clearInterval(timer1[this.index]);
+//                        var aaa = this.index;
+//                        timer1[aaa] = setInterval(function () {
+//                            oBox[aaa].style.width = changeBig()+"px";
 //                    },100);
 //                    }
 //                }
 //                for(var i = 0; i < oBox.length; i++) {
 //                    oBox[i].index = i;
 //                    oBox[i].onmouseleave = function () {
-//                            clearInterval(timer1[1]);
-//                        timer1[this.index] = setInterval(function () {
-//                            oBox[0].style.width = changeSmall() + "px";
+//                            clearInterval(timer1[this.index]);
+//                            var aaa = this.index;
+//                        timer1[aaa] = setInterval(function () {
+//                            oBox[aaa].style.width = changeSmall() + "px";
 //                        }, 100);
 //                    }
 //                }

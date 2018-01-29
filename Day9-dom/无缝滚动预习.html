@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0
+        }
+        ul{
+            list-style-type: none;
+        }
+        .slider-box{
+              width: 430px;
+              height: 100px;
+              margin:100px auto;
+              border:1px solid #dddddd;
+              padding:10px 0;
+              position: relative;
+              overflow: hidden;
+          }
+        ul{
+            width: 550px;
+            position: absolute;
+        }
+
+        .slider-box li{
+            color: #ffffff;
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 100px;
+            background-color: #000000;
+        }
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .btn-bar{
+            width: 200px;
+            text-align: center;
+            margin:0 auto;
+        }
+        .btn-bar button{
+            padding:20px;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+<div class="slider-box">
+    <ul class="clearfix">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+<div class="btn-bar">
+    <button id="next" >向左</button>
+    <button id="prev">向右</button>
+</div>
+<script>
+    var oUl = document.getElementsByTagName("ul")[0];
+    var oPrev = document.getElementById("prev");
+    var oNext = document.getElementById("next");
+    var timer;
+    var direction = 0;
+    oUl.innerHTML += oUl.innerHTML;
+    oUl.style.width = oUl.offsetWidth * 2+"px";
+    setInterval(function () {
+        oUl.style.left = (oUl.offsetLeft + direction) + "px";
+        if(oUl.offsetLeft <= -oUl.offsetWidth/2){
+            oUl.style.left = "0px";
+        }
+        if(oUl.offsetLeft >0){
+            oUl.style.left = -oUl.offsetWidth/2+6+"px";
+        }
+    },200)
+//        oNext.onclick = function () {
+//            console.log("11");
+//            clearInterval(timer);
+//           timer = setInterval(function () {
+//                if(oUl.offsetLeft <= (-oUl.offsetWidth/2)){
+//                }else{
+//                    oUl.style.left = (oUl.offsetLeft - 10) + "px";
+//                }
+//            },100)
+//        }
+//    oPrev.onclick = function () {
+//            clearInterval(timer);
+//        timer = setInterval(function () {
+//            if(oUl.offsetLeft == 0 ){
+//                oUl.style.left = -oUl.offsetWidth/2+"px";
+//            }else{
+//                oUl.style.left = oUl.offsetLeft + 10 + "px";
+//            }
+//        },100)
+//    }
+    oPrev.onclick = function () {
+        direction = 5;
+    }
+
+    oNext.onclick = function () {
+        direction = -5;
+    }
+</script>
+</body>
+</html>
