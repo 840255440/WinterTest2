@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            float: left;
+            border: 1px solid black;
+        }
+        .mouse-bar{
+            background-color: rgba(255,255,255,0.3);
+            z-index: 10;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box" >
+    <img src="images/1.jpg" alt="" style="width: 400px;height: 400px">
+    <div class="mouse-bar"></div>
+</div>
+<div class="box"></div>
+<script>
+    var oBox = document.getElementById("box");
+    var mouse = document.getElementsByClassName("mouse-bar")[0];
+    oBox.onmouseenter = function (e) {
+        var thisx = e.clientX - (oBox.offsetWidth - mouse.offsetWidth);
+        var thisy = e.clientY - (oBox.offsetHeight - mouse.offsetHeight);
+
+        if(thisy < 0){
+            mouse.style.bottom = "0px";
+        }
+        if(thisx < 0){
+            mouse.style.right = "0px";
+        }
+        mouse.style.display = "block";
+        mouse.onmousedown = function (e1) {
+            console.log(e1.clientX + "==" + oBox.offsetLeft);
+            var thisX = e1.clientX - mouse.offsetLeft;
+            var thisY = e1.clientY - mouse.offsetTop;
+            console.log("点击");
+            document.onmousemove = function (e2) {
+                mouse.style.left = e2.clientX - thisX + "px";
+                mouse.style.top = e2.clientY - thisY + "px";
+                console.log(e2.clientX + "==" + thisX);
+            };
+            mouse.onmouseup = function () {
+                document.onmousemove = null;
+                console.log("离开");
+            };
+        }
+    }
+</script>
+</body>
+</html>

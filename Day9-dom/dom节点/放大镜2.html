@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            float: left;
+        }
+        body{
+            background-color: #666666;
+        }
+        img{
+            display: block;
+        }
+        .small-img{
+            position: relative;
+        }
+        .small-img img{
+            width: 400px;
+            height: 400px;
+        }
+        .big-img{
+            width:400px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            display: none;
+        }
+        .big-img img{
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            left: -100px;
+        }
+        .move-bar{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top:0;
+            left: 0;
+            display: none;
+            background-color: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="small-img">
+    <img src="images/1.jpg" alt="">
+    <div class="move-bar"></div>
+</div>
+<div class="big-img">
+    <img src="images/1.jpg" alt="">
+</div>
+<script>
+    var oBigBox = document.getElementsByClassName("big-img")[0];
+    var oBigImg = document.getElementsByClassName("big-img")[0].getElementsByTagName("img")[0];
+    var oMove = document.getElementsByClassName("move-bar")[0];
+    var oSmallImg = document.getElementsByClassName("small-img")[0];
+
+    oSmallImg.onmouseover = function (e) {
+        oSmallImg.onmousemove = function (e) {
+            var thisX = e.clientX - oMove.offsetWidth/2;
+            var thisY = e.clientY - oMove.offsetHeight/2;
+            if (thisX < 0) {
+                thisX = 0;
+            }
+            if (thisY < 0) {
+                thisY = 0;
+            }
+            var maxLeft = oSmallImg.offsetWidth - oMove.offsetWidth;
+            var maxTop = oSmallImg.offsetHeight - oMove.offsetHeight;
+            if (thisX > maxLeft) {
+                thisX = maxLeft;
+            }
+            if (thisY > maxTop) {
+                thisY = maxTop;
+            }
+            oMove.style.display = "block";
+            oBigBox.style.display = "block"
+            oMove.style.left = thisX + "px";
+            oMove.style.top = thisY + "px";
+            oBigImg.style.left = -thisX * 2 + "px";
+            oBigImg.style.top = -thisY * 2 + "px";
+        }
+        oSmallImg.onmouseleave = function () {
+            oMove.style.display = "none";
+            oBigBox.style.display = "none"
+        }
+    }
+</script>
+</body>
+</html>
